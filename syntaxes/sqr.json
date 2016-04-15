@@ -1,0 +1,99 @@
+{ "name": "PeopleSoft SQR",
+  "scopeName": "source.SQR",
+  "fileTypes": ["sqr"],
+  "patterns": [
+    {  "name": "comment.block.SQR",
+       "match": "(!).*$\n?",
+       "comment": "Comments begin with a bang"
+    },
+    {
+       "name": "meta.function.report.SQR",
+       "begin": "(declare-report)(\\s+)([A-Za-z][-A-Za-z0-9_]*)([^-]|$)",
+       "beginCaptures": {
+           "1": {
+               "name": "keyword.control.SQR"
+           },
+           "3": {
+               "name": "entity.name.function.SQR"
+           }
+       },
+       "end": "\\bend-report\\b",
+       "endCaptures": {
+           "0": {
+               "name": "keyword.control.SQR"
+           }
+       },
+       "patterns": [
+           {
+               "include": "$self"
+           }
+       ]
+    },
+    {
+       "name": "meta.function.procedure.SQR",
+       "begin": "(begin-procedure)(\\s+)([A-Za-z][-A-Za-z0-9_]*)([^-]|$)",
+       "beginCaptures": {
+           "1": {
+               "name": "keyword.control.SQR"
+           },
+           "3": {
+               "name": "entity.name.function.SQR"
+           }
+       },
+       "end": "\\bend-procedure\\b",
+       "endCaptures": {
+           "0": {
+               "name": "keyword.control.SQR"
+           }
+       },
+       "patterns": [
+           {
+               "include": "$self"
+           }
+       ]
+    },
+    {  "name": "keyword.include.SQR",
+       "match": "(\\b)*(#)(?i:include)\\b"
+    },
+    {  "name": "variable.name.SQR",
+       "match": "(\\$|#)([A-Za-z][\\-A-Za-z0-9_]+)"
+    },
+    {  "name": "keyword.operator.SQR",
+       "match": "(\\|\\||!=|=|>|<|>=|<=|<>|\\+|\\^|\\*|/|#|%|(\\s(-|not|and|or|xor)\\s))"
+    },
+  	{
+      "name": "string.single.source.SQR",
+      "match": "('(?:\\\\'|.)*?')",
+      "comment": "Single quoted string"
+    },
+    {
+      "name": "string.double.source.SQR",
+      "match": "(\\\"(?:\\\\\"|.)*?\\\")",
+      "comment": "Double quoted string"
+    },
+    {  "name": "keyword.control.import.SQR",
+       "match": "(?i:\\b(if|else|end-if|while|end-while|do)\\b)"
+    },
+    {  "name": "entity.name.function.SQR",
+       "match": "(?i:\\b((begin|end)-(declare|document|evaluate|execute|footing|heading|procedure|program|select|setup|sql)|declare-(chart|color-map|connection|image|layout|printer|procedure|report|toc|variable)|exit-select)\\b)"
+    },
+    {  "name": "storage.type.SQR",
+       "match": "(?i:\\s*\\b(let|put|into)\\b\\s*)"
+    },
+    {  "name": "entity.name.function.SQR",
+       "match": "\\s+\\b(?i:(add|alter-(color-map|locale|printer|report)|array-(add|divide|multiply|subtract)|ask|break|call|(clear|create)-array|close|columns|commit|concat|connect|create-color-palatte|display|divide|do|encode|evaluate|extract|find|get|get-color|goto|graphic|input|last-page|move|to|use))\\b\\s+"
+    },
+    {  "name": "constant.numeric.SQR",
+       "match": "([0-9]+)"
+    },
+    {  "name": "constant.language.SQR",
+       "match": "([{][A-Za-z][\\-A-Za-z0-9_]+[}])"
+    },
+    {
+        "name": "invalid",
+        "match": "(?i:\\b(begin-report|end-report|date-time|declare printer|declare procedure|dollar-symbol|graphic font|money-symbol|no-formfeed|page-size|printer-init|printer-deinit)\\b)",
+        "comment": "These are deprecated in SQR for PeopleSoft: "
+    }
+  ],
+  "uuid": "57919b5d-ed39-4d40-9cce-2dce7935b80b"
+}
