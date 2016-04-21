@@ -3,7 +3,7 @@
 	"displayName": "SQR",
 	"description": "SQR Language Support (Oracle, PeopleSoft Enterprise)",
 	"version": "0.1.0",
-	"publisher": "City of Escondido",
+	"publisher": "CityOfEscondido",
 	"engines": {
 		"vscode": "^0.10.1"
 	},
