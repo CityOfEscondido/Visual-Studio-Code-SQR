@@ -8,12 +8,15 @@ upon which this extension was originally based.
 
 ## Current Features
 
-Syntax highlighting and snippets.
+Syntax highlighting and code snippets.
 
-## Roadmap
+## Known Issues
+1. Not all built-in SQR functions are included in syntax highlighting.
+2. I've opened an [issue](https://github.com/Microsoft/vscode/issues/5355) with VS Code for inconsistencies in the use of \t in snippets.
 
-Intellisense? It might be a bridge too far, but it would be great to be able to type "do " and get
-a list of available procedures that can be called, or type "{" and get a choice of constants.
+## Contributions
+
+Please feel free to contribute at our [Github Repository](https://github.com/CityOfEscondido/Visual-Studio-Code-SQR)
 
 ## License
 

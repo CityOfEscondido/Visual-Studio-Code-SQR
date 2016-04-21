@@ -56,7 +56,7 @@
        "match": "(\\b)*(#)(?i:include)\\b"
     },
     {  "name": "variable.name.SQR",
-       "match": "(\\$|#)([A-Za-z][\\-A-Za-z0-9_]+)"
+       "match": "(\\$|#|&)([A-Za-z][\\-A-Za-z0-9_]+)"
     },
     {  "name": "keyword.operator.SQR",
        "match": "(\\|\\||!=|=|>|<|>=|<=|<>|\\+|\\^|\\*|/|#|%|(\\s(-|not|and|or|xor)\\s))"
@@ -72,16 +72,13 @@
       "comment": "Double quoted string"
     },
     {  "name": "keyword.control.import.SQR",
-       "match": "(?i:\\b(if|else|end-if|while|end-while|do)\\b)"
+       "match": "(?i:\\b(if|else|end-if|while|end-while|do|when)\\b)"
     },
     {  "name": "entity.name.function.SQR",
-       "match": "(?i:\\b((begin|end)-(declare|document|evaluate|execute|footing|heading|procedure|program|select|setup|sql)|declare-(chart|color-map|connection|image|layout|printer|procedure|report|toc|variable)|exit-select)\\b)"
+       "match": "\\s+\\b(?i:\\b((begin|end)-(declare|document|execute|footing|heading|procedure|program|select|setup|sql)|declare-(chart|color-map|connection|image|layout|printer|procedure|report|toc|variable)|exit-select|evaluate|end-evaluate|add|alter-(color-map|locale|printer|report)|array-(add|divide|multiply|subtract)|ask|break|call|(clear|create)-array|close|columns|commit|concat|connect|create-color-palatte|display|divide|edit|encode|evaluate|extract|find|get|get-color|goto|graphic|input|isblank|getenv|last-page|move|not|round|ltrim|rtrim|to|stop|use|show|substr|print)\\b\\s+)"
     },
     {  "name": "storage.type.SQR",
        "match": "(?i:\\s*\\b(let|put|into)\\b\\s*)"
-    },
-    {  "name": "entity.name.function.SQR",
-       "match": "\\s+\\b(?i:(add|alter-(color-map|locale|printer|report)|array-(add|divide|multiply|subtract)|ask|break|call|(clear|create)-array|close|columns|commit|concat|connect|create-color-palatte|display|divide|do|encode|evaluate|extract|find|get|get-color|goto|graphic|input|last-page|move|to|use))\\b\\s+"
     },
     {  "name": "constant.numeric.SQR",
        "match": "([0-9]+)"

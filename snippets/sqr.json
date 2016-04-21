@@ -36,8 +36,19 @@
    "While loop": {
       "prefix": "while",
       "body": [
-         "while ${true}",
+         "while (${true})",
          "\t$0",
+         "end-while"
+      ]
+   },
+
+   "For (While) loop": {
+      "prefix": "for",
+      "body": [
+        "let #${counter var} = 0",
+         "while (#${counter var} <= ${max var})",
+         "\t$0",
+         "\tlet #${counter var} = #${counter var} + 1",
          "end-while"
       ]
    },
@@ -54,6 +65,7 @@
          "\t\tbreak",
          "\twhen-other",
          "\t\t$2",
+         "\t\tbreak",
          "end-evaluate"
       ]
    },
@@ -121,9 +133,9 @@
    "SQL SELECT statement": {
       "prefix": "sel",
       "body": [
-         "begin-SELECT",
-         "\t ${Field Name 1}\t\t&${Alias 1}",
-         "\t,${Field Name 2}\t\t&${Alias 2}",
+         "begin-SELECT  On-Error=SQL-Error",
+         "${Field Name 1}\t\t&${Alias 1}",
+         "${Field Name 2}\t\t&${Alias 2}",
          "",
          "\tlet ${Variable 1} = &${Alias 1}",
          "\tlet ${Variable 2} = &${Alias 2}",
@@ -139,7 +151,7 @@
    "SQL INSERT values block": {
       "prefix": "sqliv",
       "body": [
-         "begin-SQL",
+         "begin-SQL On-Error=SQL-Error",
          "INSERT INTO ${Table}",
          "(",
          "\t ${Field Name 1}",
@@ -157,7 +169,7 @@
    "SQL INSERT select block": {
       "prefix": "sqlis",
       "body": [
-         "begin-SQL",
+         "begin-SQL On-Error=SQL-Error",
          "INSERT INTO ${Table}",
          "(",
          "\t ${Field Name 1}",
@@ -178,7 +190,7 @@
    "SQL UPDATE block": {
       "prefix": "sqlu",
       "body": [
-         "begin-SQL",
+         "begin-SQL On-Error=SQL-Error",
          "UPDATE ${Table}",
          "SET  ${Field Name 1} = ${Value 1}",
          "    ,${Field Name 2} = ${Value 2}",
@@ -191,7 +203,7 @@
    "SQL DELETE block": {
       "prefix": "sqld",
       "body": [
-         "begin-SQL",
+         "begin-SQL On-Error=SQL-Error",
          "DELETE FROM ${Table}",
          "WHERE ${Field Name 1} = ${Variable 1}",
          "end-SQL"
