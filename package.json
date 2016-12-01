@@ -1,32 +1,48 @@
 {
-	"name": "SQR",
-	"displayName": "SQR",
-	"description": "SQR Language Support (Oracle, PeopleSoft Enterprise)",
-	"version": "0.1.0",
-	"publisher": "CityOfEscondido",
-	"engines": {
-		"vscode": "^0.10.1"
-	},
-	"categories": [
-		"Languages"
-	],
-	"contributes": {
-		"languages": [{
-			"id": "sqr",
-			"aliases": ["SQR", "sqr"],
-			"extensions": [".sqr",".sqc",".SQR",".SQC"],
-			"configuration": "./sqr.configuration.json"
-		}],
-		"grammars": [{
-			"language": "sqr",
-			"scopeName": "source.SQR",
-			"path": "./syntaxes/sqr.json"
-		}],
-		"snippets": [
-			{
-				"language": "sqr",
-				"path": "./snippets/sqr.json"
-			}
-		]
-	}
+    "name": "SQR",
+    "displayName": "SQR",
+    "description": "SQR Language Support (Oracle, PeopleSoft Enterprise)",
+    "version": "0.2.1",
+    "publisher": "CityOfEscondido",
+    "bugs": {
+        "url": "https://github.com/CityOfEscondido/Visual-Studio-Code-SQR/issues"
+    },
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "sqr",
+                "aliases": [
+                    "SQR",
+                    "sqr"
+                ],
+                "extensions": [
+                    ".sqr",
+                    ".sqc",
+                    ".SQR",
+                    ".SQC"
+                ],
+                "configuration": "./sqr.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "sqr",
+                "scopeName": "source.SQR",
+                "path": "./syntaxes/sqr.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "sqr",
+                "path": "./snippets/sqr.json"
+            }
+        ]
+    }
 }

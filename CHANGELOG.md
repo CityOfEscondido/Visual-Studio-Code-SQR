@@ -1,6 +1,6 @@
 # Changes
 
-## Version 0.1.1 December 1, 2016
+## Version 0.2.1 December 1, 2016
 
 Fix by @abasic-csu - Highlight functions that don't start with whitespace
 
