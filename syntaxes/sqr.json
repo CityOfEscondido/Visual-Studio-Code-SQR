@@ -75,7 +75,7 @@
        "match": "(?i:\\b(if|else|end-if|while|end-while|do|when)\\b)"
     },
     {  "name": "entity.name.function.SQR",
-       "match": "\\s+\\b(?i:\\b((begin|end)-(declare|document|execute|footing|heading|procedure|program|select|setup|sql)|declare-(chart|color-map|connection|image|layout|printer|procedure|report|toc|variable)|exit-select|evaluate|end-evaluate|add|alter-(color-map|locale|printer|report)|array-(add|divide|multiply|subtract)|ask|break|call|(clear|create)-array|close|columns|commit|concat|connect|create-color-palatte|display|divide|edit|encode|evaluate|extract|find|get|get-color|goto|graphic|input|isblank|getenv|last-page|move|not|round|ltrim|rtrim|to|stop|use|show|substr|print)\\b\\s+)"
+       "match": "\\b(?i:\\b((begin|end)-(declare|document|execute|footing|heading|procedure|program|select|setup|sql)|declare-(chart|color-map|connection|image|layout|printer|procedure|report|toc|variable)|exit-select|evaluate|end-evaluate|add|alter-(color-map|locale|printer|report)|array-(add|divide|multiply|subtract)|ask|break|call|(clear|create)-array|close|columns|commit|concat|connect|create-color-palatte|display|divide|edit|encode|evaluate|extract|find|get|get-color|goto|graphic|input|isblank|getenv|last-page|move|not|round|ltrim|rtrim|to|stop|use|show|substr|print)\\b\\s+)"
     },
     {  "name": "storage.type.SQR",
        "match": "(?i:\\s*\\b(let|put|into)\\b\\s*)"
