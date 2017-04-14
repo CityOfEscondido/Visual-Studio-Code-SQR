@@ -1,5 +1,9 @@
 # Changes
 
+## Version 0.2.3 April 14, 2017
+
+Added reference to new [Snippets Wiki Page](https://github.com/CityOfEscondido/Visual-Studio-Code-SQR/wiki/Snippets-Documentation)
+
 ## Version 0.2.2 April 14, 2017
 
 Fixes by @mAlvarado1986
