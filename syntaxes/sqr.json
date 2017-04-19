@@ -55,8 +55,8 @@
     {  "name": "keyword.include.SQR",
        "match": "(\\b)*(#)(?i:include)\\b"
     },
-    {  "name": "storage.type.SQR",    
-       "match":"(\\b)*(#)(?i:define)\\b"
+    {  "name": "storage.type.SQR",
+       "match": "(\\b)*(#)(?i:define)\\b"
     },
     {  "name": "variable.name.SQR",
        "match": "(\\$|#|&)([A-Za-z][\\-A-Za-z0-9_]+)"
@@ -64,7 +64,7 @@
     {  "name": "keyword.operator.SQR",
        "match": "(\\|\\||!=|=|>|<|>=|<=|<>|\\+|\\^|\\*|/|#|%|(\\s(-|not|and|or|xor)\\s))"
     },
-  	{
+    {
       "name": "string.single.source.SQR",
       "match": "('(?:\\\\'|.)*?')",
       "comment": "Single quoted string"

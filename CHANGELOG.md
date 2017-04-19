@@ -1,5 +1,9 @@
 # Changes
 
+## Version 0.2.4 April 19, 2017
+
+Removed invalid control characters that broke syntax highlighting file parsing
+
 ## Version 0.2.3 April 14, 2017
 
 Added reference to new [Snippets Wiki Page](https://github.com/CityOfEscondido/Visual-Studio-Code-SQR/wiki/Snippets-Documentation)
