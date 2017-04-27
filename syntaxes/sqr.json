@@ -3,7 +3,7 @@
   "fileTypes": ["sqr"],
   "patterns": [
     {  "name": "comment.block.SQR",
-       "match": "(!).*$\n?",
+       "match": "(!)[^=].*$\n?",
        "comment": "Comments begin with a bang"
     },
     {
