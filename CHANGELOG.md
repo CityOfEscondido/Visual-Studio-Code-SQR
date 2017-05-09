@@ -1,5 +1,9 @@
 # Changes
 
+## Version 0.2.5 May 8, 2017
+
+Tweak to comment regex to show != operator without comment highlighting
+
 ## Version 0.2.4 April 19, 2017
 
 Removed invalid control characters that broke syntax highlighting file parsing
