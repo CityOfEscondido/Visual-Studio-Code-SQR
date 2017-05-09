@@ -10,6 +10,8 @@ upon which this extension was originally based.
 
 Syntax highlighting and code snippets. Please visit the [Snippets Wiki Page](https://github.com/CityOfEscondido/Visual-Studio-Code-SQR/wiki/Snippets-Documentation) for documentation of the SQR snippet shortuts you can take advantage of through IntelliSense in VSC.
 
+![SQR Snippets Demo](https://www.escondido.org/Data/Sites/1/media/video/SQR_Snippets.gif)
+
 ## Known Issues
 1. Not all built-in SQR functions are included in syntax highlighting.
 2. I've opened an [issue](https://github.com/Microsoft/vscode/issues/5355) with VS Code for inconsistencies in the use of \t in snippets.
