@@ -52,11 +52,11 @@
            }
        ]
     },
-    {  "name": "keyword.include.SQR",
-       "match": "(\\b)*(#)(?i:include)\\b"
+    { "name": "keyword.include.SQR",
+        "match": "#(?i:include)\b"
     },
-    {  "name": "storage.type.SQR",
-       "match": "(\\b)*(#)(?i:define)\\b"
+    { "name": "storage.type.SQR",
+        "match": "(#)(?i:define)\b"
     },
     {  "name": "variable.name.SQR",
        "match": "(\\$|#|&)([A-Za-z][\\-A-Za-z0-9_]+)"
