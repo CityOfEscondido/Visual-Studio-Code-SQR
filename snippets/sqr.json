@@ -1,248 +1,248 @@
 {
-  "Define substitution variable": {
-     "prefix": "def",
-     "body": [
-        "#define ${1:Substitution Variable Name}\t\t\t\t${0:Value or 'Value'}"
-     ]
-  },
-  
-  "Array": {
-    "prefix": "arr",
-    "body": [
-       "create-array name=${1:Array Name} size=${2:Number of Elements}",
-       "\tfield=${3:Field Name 1}:${4:Field 1 number or char}",
-       "\tfield=${5:Field Name 2}:${6:Field 2 number or char}"
-    ] 
-  },
-  
-  "Array put": {
-    "prefix": "put",
-    "body": [
-      "put ${1:Item} into ${2:Array Name}(${3:Numeric Position}) ${4:Array Field Name}"
-    ]
-  },
-  
-  "Array get": {
-    "prefix": "get",
-    "body": [
-      "get ${1:Variable 1}",
-      "    ${2:Variable 2}",
-      "from ${3:Array Name}(${4:Numeric Position})",
-      "\t${5:Array Field Name 1}",
-      "\t${6:Array Field Name 2}"
-    ]
-  },
-  
-  "While loop": {
-     "prefix": "while",
-     "body": [
-        "while (${1:true})",
-        "\t$0",
-        "end-while"
-     ]
-  },
-
-  "For (While) loop": {
-     "prefix": "for",
-     "body": [
-       "let #${1:counter var} = 0",
-        "while (#${1} <= ${2:max var})",
-        "\t$0",
-        "\tlet #${1} = #${1} + 1",
-        "end-while"
-     ]
-  },
-  
-  "Evaluate statement": {
-     "prefix": "eval",
-     "body": [
-        "evaluate ${1:Variable}",
-        "\twhen ${2:comparison operator 1} ${3:Value 1}",
-        "\t\t$4",
-        "\t\tbreak",
-        "\twhen ${5:comparison operator 2} ${6:Value 2}",
-        "\t\t$7",
-        "\t\tbreak",
-        "\twhen-other",
-        "\t\t$0",
-        "\t\tbreak",
-        "end-evaluate"
-     ]
-  },
-  
-  "If statement": {
-     "prefix": "if",
-     "body": [
-        "if ${1:true}",
-        "\t$0",
-        "end-if"
-     ]
-  },
-  
-  "If else statement": {
-     "prefix": "ife",
-     "body": [
-        "if ${1:true}",
-        "\t$2",
-        "else",
-        "\t$0",
-        "end-if"
-     ]      
-  },
-  
-  "#Ifdef processing directive": {
-    "prefix": "ifd",
-    "body": [
-       "#ifdef ${1:Constant Name}",
-       "\t$0",
-       "#endif"
-    ] 
-  },
-
-  "#Ifdef #else processing directive": {
-    "prefix": "ifde",
-    "body": [
-       "#ifdef ${1:Substitution Variable Name}",
-       "\t$2",
-       "#else",
-       "\t$0",
-       "#endif"
-    ] 
-  },
-  
-  "#Ifndef processing directive": {
-    "prefix": "ifnd",
-    "body": [
-       "#ifndef ${1:Substitution Variable Name}",
-       "\t$0",
-       "#endif"
-    ] 
-  },
-  
-  "#Ifndef #else processing directive": {
-    "prefix": "ifnde",
-    "body": [
-       "#ifndef ${1:Substitution Variable Name}",
-       "\t$2",
-       "#else",
-       "\t$0",
-       "#endif"
-    ] 
-  },
-  
-  "SQL SELECT statement": {
-     "prefix": "sel",
-     "body": [
-        "begin-SELECT  On-Error=SQL-Error",
-        "${1:Field Name 1}\t\t&${2:Alias 1}",
-        "${2:Field Name 2}\t\t&${4:Alias 2}",
-        "",
-        "\tlet ${5:Variable 1} = &${2}",
-        "\tlet ${6:Variable 2} = &${4}",
-        "",
-        "FROM ${7:Table 1}",
-        "JOIN ${8:Table 2} ON ${8}.${9:Field Name 3} = ${7}.${9}",
-        "LEFT OUTER JOIN ${10:Table 3} ON ${10}.${11:FieldName 4} = ${7}.${11}",
-        "WHERE $0",
-        "end-SELECT"
-     ]
-  },
-  
-  "SQL INSERT values block": {
-     "prefix": "sqliv",
-     "body": [
-        "begin-SQL On-Error=SQL-Error",
-        "INSERT INTO ${1:Table}",
-        "(",
-        "\t ${2:Field Name 1}",
-        "\t,${3:Field Name 2}",
-        ")",
-        "VALUES",
-        "(",
-        "\t ${4:Value 1}",
-        "\t,${5:Value 2}",
-        ")",
-        "end-SQL"
-     ]
-  },
-  
-  "SQL INSERT select block": {
-     "prefix": "sqlis",
-     "body": [
-        "begin-SQL On-Error=SQL-Error",
-        "INSERT INTO ${1:Table}",
-        "(",
-        "\t ${2:Field Name 1}",
-        "\t,${3:Field Name 2}",
-        ")",
-        "(",
-        "SELECT",
-        "\t ${2}",
-        "\t,${3}",
-        "FROM ${4:Table 1}",
-        "JOIN ${5:Table 2} ON ${5}.${6:Field Name 3} = ${4}.${6}",
-        "LEFT OUTER JOIN ${7:Table 3} ON ${7}.${8:Field Name 4} = ${4}.${8}",
-        "WHERE ${0:Where Clause}",
-        ")",
-        "end-SQL"
-     ]
-  },
-  "SQL UPDATE block": {
-     "prefix": "sqlu",
-     "body": [
-        "begin-SQL On-Error=SQL-Error",
-        "UPDATE ${1:Table}",
-        "SET  ${2:Field Name 1} = ${3:Value 1}",
-        "    ,${4:Field Name 2} = ${5:Value 2}",
-        "WHERE ${6:Field Name 3} = ${7:Variable 1}",
-        "  AND ${8:Field Name 4} = ${9:Variable 2}",
-        "end-SQL"
-     ]
-  },
-
-  "SQL DELETE block": {
-     "prefix": "sqld",
-     "body": [
-        "begin-SQL On-Error=SQL-Error",
-        "DELETE FROM ${1:Table}",
-        "WHERE ${2:Field Name 1} = ${3:Variable 1}",
-        "end-SQL"
-     ]
-  },
-
-  "Procedure block": {
-     "prefix": "proc",
-     "body": [
-       "!*******************************************************************************",
-       "! Procedure: ${1:Procedure Name}",
-       "! Description: ${2:Description}",
-       "!              ${3:Description Continued}",
-       "!*******************************************************************************",
-       "begin-procedure ${1:Procedure Name}",
-       "",
-       "\t$0",  
-       "",
-       "end-procedure"
-     ]
-  },
-  
-  "Procedure block with parameters": {
-     "prefix": "procp",
-     "body": [
-       "!*******************************************************************************",
-       "! Procedure: ${1:Procedure Name}",
-       "! Description: ${2:Description}",
-       "!              ${3:Description Continued}",
-       "! Parameters:",
-       "! \t${4:In Param} - ${5:In Param Descr}",
-       "! \t${6:Out Param} - ${7:Out Param Descr}",
-       "!*******************************************************************************",
-       "begin-procedure ${1:Procedure Name}(${4:In Param},:${6:Out Param})",
-       "",
-       "\t$0",
-       "",
-       "end-procedure"
-     ]
-  }   
-  
-}
+    "Define substitution variable": {
+       "prefix": "def",
+       "body": [
+          "#define ${1:Substitution Variable Name}\t\t\t\t${0:Value or 'Value'}"
+       ]
+    },
+    
+    "Array": {
+      "prefix": "arr",
+      "body": [
+         "create-array name=${1:Array Name} size=${2:Number of Elements}",
+         "\tfield=${3:Field Name 1}:${4|char,number,date,decimal,float,integer|}",
+         "\tfield=${5:Field Name 2}:${6|char,number,date,decimal,float,integer|}"
+      ] 
+    },
+    
+    "Array put": {
+      "prefix": "put",
+      "body": [
+        "put ${1:Item} into ${2:Array Name}(${3:Numeric Position}) ${4:Array Field Name}"
+      ]
+    },
+    
+    "Array get": {
+      "prefix": "get",
+      "body": [
+        "get ${1:Variable 1}",
+        "    ${2:Variable 2}",
+        "from ${3:Array Name}(${4:Numeric Position})",
+        "\t${5:Array Field Name 1}",
+        "\t${6:Array Field Name 2}"
+      ]
+    },
+    
+    "While loop": {
+       "prefix": "while",
+       "body": [
+          "while (${1:true})",
+          "\t$0",
+          "end-while"
+       ]
+    },
+ 
+    "For (While) loop": {
+       "prefix": "for",
+       "body": [
+         "let #${1:counter var} = 0",
+          "while (#${1} <= ${2:max var})",
+          "\t$0",
+          "\tlet #${1} = #${1} + 1",
+          "end-while"
+       ]
+    },
+    
+    "Evaluate statement": {
+       "prefix": "eval",
+       "body": [
+          "evaluate ${1:Variable}",
+          "\twhen ${2|=,!=,<,>,<=,>=|} ${3:Value 1}",
+          "\t\t$4",
+          "\t\tbreak",
+          "\twhen ${5|=,!=,<,>,<=,>=|} ${6:Value 2}",
+          "\t\t$7",
+          "\t\tbreak",
+          "\twhen-other",
+          "\t\t$0",
+          "\t\tbreak",
+          "end-evaluate"
+       ]
+    },
+    
+    "If statement": {
+       "prefix": "if",
+       "body": [
+          "if ${1:true}",
+          "\t$0",
+          "end-if"
+       ]
+    },
+    
+    "If else statement": {
+       "prefix": "ife",
+       "body": [
+          "if ${1:true}",
+          "\t$2",
+          "else",
+          "\t$0",
+          "end-if"
+       ]      
+    },
+    
+    "#Ifdef processing directive": {
+      "prefix": "ifd",
+      "body": [
+         "#ifdef ${1:Constant Name}",
+         "\t$0",
+         "#endif"
+      ] 
+    },
+ 
+    "#Ifdef #else processing directive": {
+      "prefix": "ifde",
+      "body": [
+         "#ifdef ${1:Substitution Variable Name}",
+         "\t$2",
+         "#else",
+         "\t$0",
+         "#endif"
+      ] 
+    },
+    
+    "#Ifndef processing directive": {
+      "prefix": "ifnd",
+      "body": [
+         "#ifndef ${1:Substitution Variable Name}",
+         "\t$0",
+         "#endif"
+      ] 
+    },
+    
+    "#Ifndef #else processing directive": {
+      "prefix": "ifnde",
+      "body": [
+         "#ifndef ${1:Substitution Variable Name}",
+         "\t$2",
+         "#else",
+         "\t$0",
+         "#endif"
+      ] 
+    },
+    
+    "SQL SELECT statement": {
+       "prefix": "sel",
+       "body": [
+          "begin-SELECT  On-Error=SQL-Error",
+          "${1:Field Name 1}\t\t&${2:Alias 1}",
+          "${2:Field Name 2}\t\t&${4:Alias 2}",
+          "",
+          "\tlet ${5:Variable 1} = &${2}",
+          "\tlet ${6:Variable 2} = &${4}",
+          "",
+          "FROM ${7:Table 1}",
+          "JOIN ${8:Table 2} ON ${8}.${9:Field Name 3} = ${7}.${9}",
+          "LEFT OUTER JOIN ${10:Table 3} ON ${10}.${11:FieldName 4} = ${7}.${11}",
+          "WHERE $0",
+          "end-SELECT"
+       ]
+    },
+    
+    "SQL INSERT values block": {
+       "prefix": "sqliv",
+       "body": [
+          "begin-SQL On-Error=SQL-Error",
+          "INSERT INTO ${1:Table}",
+          "(",
+          "\t ${2:Field Name 1}",
+          "\t,${3:Field Name 2}",
+          ")",
+          "VALUES",
+          "(",
+          "\t ${4:Value 1}",
+          "\t,${5:Value 2}",
+          ")",
+          "end-SQL"
+       ]
+    },
+    
+    "SQL INSERT select block": {
+       "prefix": "sqlis",
+       "body": [
+          "begin-SQL On-Error=SQL-Error",
+          "INSERT INTO ${1:Table}",
+          "(",
+          "\t ${2:Field Name 1}",
+          "\t,${3:Field Name 2}",
+          ")",
+          "(",
+          "SELECT",
+          "\t ${2}",
+          "\t,${3}",
+          "FROM ${4:Table 1}",
+          "JOIN ${5:Table 2} ON ${5}.${6:Field Name 3} = ${4}.${6}",
+          "LEFT OUTER JOIN ${7:Table 3} ON ${7}.${8:Field Name 4} = ${4}.${8}",
+          "WHERE ${0:Where Clause}",
+          ")",
+          "end-SQL"
+       ]
+    },
+    "SQL UPDATE block": {
+       "prefix": "sqlu",
+       "body": [
+          "begin-SQL On-Error=SQL-Error",
+          "UPDATE ${1:Table}",
+          "SET  ${2:Field Name 1} = ${3:Value 1}",
+          "    ,${4:Field Name 2} = ${5:Value 2}",
+          "WHERE ${6:Field Name 3} = ${7:Variable 1}",
+          "  AND ${8:Field Name 4} = ${9:Variable 2}",
+          "end-SQL"
+       ]
+    },
+ 
+    "SQL DELETE block": {
+       "prefix": "sqld",
+       "body": [
+          "begin-SQL On-Error=SQL-Error",
+          "DELETE FROM ${1:Table}",
+          "WHERE ${2:Field Name 1} = ${3:Variable 1}",
+          "end-SQL"
+       ]
+    },
+ 
+    "Procedure block": {
+       "prefix": "proc",
+       "body": [
+         "!*******************************************************************************",
+         "! Procedure: ${1:Procedure Name}",
+         "! Description: ${2:Description}",
+         "!              ${3:Description Continued}",
+         "!*******************************************************************************",
+         "begin-procedure ${1:Procedure Name}",
+         "",
+         "\t$0",  
+         "",
+         "end-procedure"
+       ]
+    },
+    
+    "Procedure block with parameters": {
+       "prefix": "procp",
+       "body": [
+         "!*******************************************************************************",
+         "! Procedure: ${1:Procedure Name}",
+         "! Description: ${2:Description}",
+         "!              ${3:Description Continued}",
+         "! Parameters:",
+         "! \t${4:In Param} - ${5:In Param Descr}",
+         "! \t${6:Out Param} - ${7:Out Param Descr}",
+         "!*******************************************************************************",
+         "begin-procedure ${1:Procedure Name}(${4:In Param},:${6:Out Param})",
+         "",
+         "\t$0",
+         "",
+         "end-procedure"
+       ]
+    }   
+    
+ }

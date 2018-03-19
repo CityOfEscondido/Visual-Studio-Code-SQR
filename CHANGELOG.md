@@ -1,5 +1,9 @@
 # Changes
 
+## version 0.2.7 March 19, 2018
+
+More snippet updates by @jwagenleitner
+
 ## version 0.2.6 March 19, 2018
 
 Fixes to snippets by @jwagenleitner
