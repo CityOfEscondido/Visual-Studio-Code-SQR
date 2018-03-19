@@ -1,5 +1,10 @@
 # Changes
 
+## version 0.2.6 March 19, 2018
+
+Fixes to snippets by @jwagenleitner
+Workaround for x64 textmate processing problem on # character by @RameshKris
+
 ## Version 0.2.5 May 8, 2017
 
 Tweak to comment regex to show != operator without comment highlighting

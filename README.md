@@ -14,7 +14,7 @@ Syntax highlighting and code snippets. Please visit the [Snippets Wiki Page](htt
 
 ## Known Issues
 1. Not all built-in SQR functions are included in syntax highlighting.
-2. I've opened an [issue](https://github.com/Microsoft/vscode/issues/5355) with VS Code for inconsistencies in the use of \t in snippets.
+2. Need to eventually re-report the [issue](https://github.com/Microsoft/vscode/issues/5355) for inconsistencies in the use of \t in snippets.
 
 ## Contributions
 
