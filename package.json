@@ -1,9 +1,14 @@
 {
     "name": "SQR",
+    "version": "0.2.6",
+    "publisher": "CityOfEscondido",
     "displayName": "SQR",
     "description": "SQR Language Support (Oracle, PeopleSoft Enterprise)",
-    "version": "0.2.5",
-    "publisher": "CityOfEscondido",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CityOfEscondido/Visual-Studio-Code-SQR.git"
+    },
+    "homepage": "https://github.com/CityOfEscondido/Visual-Studio-Code-SQR/blob/master/README.md",
     "bugs": {
         "url": "https://github.com/CityOfEscondido/Visual-Studio-Code-SQR/issues"
     },
