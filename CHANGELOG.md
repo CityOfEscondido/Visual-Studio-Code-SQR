@@ -1,5 +1,9 @@
 # Changes
 
+## version 0.2.8 March 28, 2018
+
+Update to numeric constant regex by @RameshKris
+
 ## version 0.2.7 March 19, 2018
 
 More snippet updates by @jwagenleitner

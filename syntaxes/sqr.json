@@ -84,9 +84,9 @@
        "match": "(?i:\\s*\\b(let|put|into)\\b\\s*)"
     },
     {  "name": "constant.numeric.SQR",
-       "match": "([0-9]+)"
-    },
-    {  "name": "constant.language.SQR",
+       "match": "\\b([\\d]+(\\.?)[\\d]+)\\b"
+     },
+     { "name": "constant.language.SQR",
        "match": "([{][A-Za-z][\\-A-Za-z0-9_]+[}])"
     },
     {
