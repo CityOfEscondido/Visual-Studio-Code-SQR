@@ -31,7 +31,9 @@
                     ".sqr",
                     ".sqc",
                     ".SQR",
-                    ".SQC"
+                    ".SQC",
+                    ".inc",
+                    ".INC"
                 ],
                 "configuration": "./sqr.configuration.json"
             }
