@@ -1,5 +1,11 @@
 # Changes
 
+## version 0.2.9 January 22, 2020
+
+Updates by @deathvango
+- Added highlighting for global variables referenced from local procedures (ex $_global-var)
+- Added ".inc" extension as supported SQR filetype
+
 ## version 0.2.8 March 28, 2018
 
 Update to numeric constant regex by @RameshKris

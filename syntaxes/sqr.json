@@ -61,6 +61,10 @@
     {  "name": "variable.name.SQR",
        "match": "(\\$|#|&)([A-Za-z][\\-A-Za-z0-9_]+)"
     },
+    {  
+      "name": "variable.global.name.SQR",
+      "match": "(\\$|#)(_[A-Za-z][\\-A-Za-z0-9_]+)"
+    },
     {  "name": "keyword.operator.SQR",
        "match": "(\\|\\||!=|=|>|<|>=|<=|<>|\\+|\\^|\\*|/|#|%|(\\s(-|not|and|or|xor)\\s))"
     },
