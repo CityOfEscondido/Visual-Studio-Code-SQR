@@ -222,7 +222,7 @@
          "",
          "\t$0",  
          "",
-         "end-procedure"
+         "end-procedure ${1:Procedure Name}"
        ]
     },
     
@@ -241,8 +241,25 @@
          "",
          "\t$0",
          "",
-         "end-procedure"
+         "end-procedure ${1:Procedure Name}"
        ]
-    }   
+    }, 
+
+    "Load Lookup Block": {
+      "prefix": "load",
+      "body": [
+      "Load-Lookup", 
+         "Name = ${1:Lookup table name}",
+         "Table = ${2:DB table name}",
+         "Key = ${3:Key column name}",
+         "Return_Value = ${4:Return column name}",
+         "! Optional Inputs Below",
+         "Rows = ${5:Initial size of the lookup table}",
+         "Extent ${6:Amount to increase the array when full}",
+         "Where = ${7:Selction Criteria}",
+         "Sort = ${8:Sorting method}",
+         "Quiet"
+      ]
+   } 
     
  }
