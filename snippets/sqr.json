@@ -222,7 +222,7 @@
          "",
          "\t$0",  
          "",
-         "end-procedure"
+         "end-procedure ${1:Procedure Name}"
        ]
     },
     
@@ -241,7 +241,7 @@
          "",
          "\t$0",
          "",
-         "end-procedure"
+         "end-procedure ${1:Procedure Name}"
        ]
     }, 
 
